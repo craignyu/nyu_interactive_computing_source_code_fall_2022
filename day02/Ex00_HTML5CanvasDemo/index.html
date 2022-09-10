@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <title>HTML5 Canvas Demo</title>
+  </head>
+  <body>
+    <h1>HTML5 Canvas Demo</h1>
+
+    <!-- create a new canvas element -->
+    <canvas id="canvas1" width="200" height="200" style="border: 1px solid black;"></canvas>
+
+    <!-- now write some code to draw to the canvas -->
+    <script>
+      // get a DOM reference to the canvas
+      let c = document.getElementById('canvas1');
+
+      // declare that we plan to draw to the canvas using 2d graphics
+      let context = c.getContext('2d');
+
+      // move the drawing cursor to position (0,0) - top left side of the canvas
+      context.moveTo(0,0);
+
+      // draw a line
+      context.lineTo(200,200);
+
+      // fill in the line with a solid color
+      context.strokeStyle = '#ff0000';
+      context.stroke();
+    </script>
+  </body>
+</html>
