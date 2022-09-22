@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- load in the p5 core library -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
+
+    <!-- note that you can load the p5.js library locally as well -->
+    <!-- <script src="../js/p5.js"></script> -->
+
+    <!-- your custom sketch code -->
+    <script src="sketch.js"></script>
+
+    <!-- custom CSS -->
+    <style type="text/css">
+      /* absolute positioning implementation */
+      #center {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        top: 50%;
+        left: 50%;
+        margin-left: -250px;
+        margin-top: -250px;
+        border: 5px solid black;
+      }
+
+      /* flexbox implementation */
+      #center_flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        border: 3px solid green;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Horizontally and Vertically Centering a Canvas Element</h1>
+    <div id="center">
+    </div>
+    <!-- note: normally the canvas would be appended here -->
+  </body>
+</html>

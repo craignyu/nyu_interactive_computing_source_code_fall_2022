@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Ex_MultipleCanvasElements</title>
+
+    <!-- custom CSS -->
+    <style type="text/css">
+      #sketch1 {
+        width: 250px;
+        height: 250px;
+        border: none;
+        overflow: hidden;
+      }
+
+      #sketch2 {
+        width: 250px;
+        height: 250px;
+        border: none;
+        overflow: hidden;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Multiple Canvas Elements with Communication (iframe technique)</h1>
+
+    <p>Draw on one canvas and the other will mirror your drawing using a green color.</p>
+
+    <iframe id="sketch1" src="sketch1.html" scrolling="no"></iframe>
+    <iframe id="sketch2" src="sketch2.html" scrolling="no"></iframe>
+
+    <hr>
+
+    <button onclick="clearBothCanvases();">Clear Both Canvases</button>
+
+    <script>
+      // set up some global variables in this document that will be shared between both of the iframes
+      let x = 0;
+      let y = 0;
+      let drawing1 = false;
+      let drawing2 = false;
+
+      // this function is called to clear both canvases
+      // it isolates the variable namespace for each iframe
+      // and then calls the 'background' function in each
+      // of them to erase them
+      function clearBothCanvases() {
+        // get a reference to each iframe's context
+        let iframe1 = document.getElementById('sketch1').contentWindow;
+        let iframe2 = document.getElementById('sketch2').contentWindow;
+
+        // call the background function inside both canvases
+        iframe1.background(0);
+        iframe2.background(0);
+      }
+    </script>
+
+  </body>
+</html>

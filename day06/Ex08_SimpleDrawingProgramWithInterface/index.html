@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- load in the p5 core library -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
+
+    <!-- note that you can load the p5.js library locally as well -->
+    <!-- <script src="../js/p5.js"></script> -->
+
+    <!-- your custom sketch code -->
+    <script src="sketch.js"></script>
+
+    <!-- custom styles -->
+    <style>
+      #canvas_container {
+        margin: auto;
+        text-align: center;
+        border-bottom: 3px solid black;
+        padding-bottom: 20px;
+      }
+      #controls {
+        margin: auto;
+        text-align: center;
+        padding-top: 20px;
+      }
+      #preview {
+        display: inline-block;
+        border: 1px solid black;
+        width: 50px;
+        height: 50px;
+        background-color: rgb(128,128,128);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Simple Drawing Program with Interface</h1>
+    <div id="canvas_container"></div>
+    <div id="controls">
+      <select id="brush" oninput="changeBrush(this);">
+        <option value="ellipse">Ellipse</option>
+        <option value="rect">Rectangle</option>
+      </select>
+      <button onclick="clearCanvas();">Clear Canvas</button>
+      <button onclick="saveImage();">Save Image</button>
+
+      <br>
+      <h3>Color Picker <span id="preview"></span></h3>
+      R: <input type="range" id="r" min="0" max="255" step="1" value="128" oninput="changeRed(this);"><br>
+      G: <input type="range" id="g" min="0" max="255" step="1" value="128" oninput="changeGreen(this);"><br>
+      B: <input type="range" id="b" min="0" max="255" step="1" value="128" oninput="changeBlue(this);"><br>
+    </div>
+  </body>
+</html>

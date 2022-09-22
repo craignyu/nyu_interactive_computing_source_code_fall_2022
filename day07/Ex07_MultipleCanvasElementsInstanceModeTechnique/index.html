@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- load in the p5 core library -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
+
+    <!-- note that you can load the p5.js library locally as well -->
+    <!-- <script src="../js/p5.js"></script> -->
+
+    <script>
+      // we won't be using a 'sketch.js' file for this application
+      // instead, we will be creating all of the necessary p5 functions inside
+      // of a function that we will write here in the index.html file.
+      // technically you can write this code anywhere, but I want to make sure
+      // everyone knows that what we are doing here is different than writing
+      // the global p5 functions (setup, draw, preload, etc.)
+
+      // step 1 - design a function for a "generic" p5 program
+      let sketchCode1 = function(p) {
+        // the variable p will be a reference to the p5 API and will
+        // contain all p5 specific functions (ellipse, rect, createCanvas, etc.)
+
+        // start off by creating a setup function
+        // note the 'p.' prefix in front of any p5 related function
+        p.setup = function() {
+          p.createCanvas(250,250);
+          p.background(0);
+          p.noStroke();
+        }
+
+        // also create a draw function
+        p.draw = function() {
+          p.fill(p.random(255));
+          p.ellipse( p.random(250), p.random(250), 10, 10);
+
+          p.fill(0,255,0);
+          p.ellipse(p.mouseX, p.mouseY, 10, 10);
+        }
+      }
+
+      // step 2 - use this function to create an 'instance' of the p5 sketch
+      // think of this like an independent copy of the sketch
+      // we will take a lot more about this when we cover OOP in our next
+      // few classes!!
+      let sketch1 = new p5( sketchCode1 );
+
+      // note that you can create AS MANY COPIES as you'd like of this sketch!
+      let sketch2 = new p5( sketchCode1 );
+      let sketch3 = new p5( sketchCode1 );
+      let sketch4 = new p5( sketchCode1 );
+      let sketch5 = new p5( sketchCode1 );
+      let sketch6 = new p5( sketchCode1 );
+
+    </script>
+
+    <!-- custom styles -->
+    <style>
+      canvas {
+        display: inline-block;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Multiple Canvases using p5 Instance Mode</h1>
+  </body>
+</html>
