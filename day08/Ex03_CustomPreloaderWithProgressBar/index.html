@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- load in the p5 core library -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
+
+    <!-- note that you can load the p5.js library locally as well -->
+    <!-- <script src="../js/p5.js"></script> -->
+
+    <!-- your custom sketch code -->
+    <script src="sketch.js"></script>
+
+    <style>
+
+      #p5_loading {
+        width: 500px;
+        height: 500px;
+        border: 5px solid black;
+        font-size: 200%;
+        text-align: center;
+        margin: auto;
+
+        /* mark this div as relatively positioned - this won't move it, but
+           it will cause the div to 'remember' its position on the page -
+           this is important since any child divs will need this information
+           in order to position themselves correctly */
+        position: relative;
+      }
+
+      #progress_bar {
+        background-color: blue;
+        height: 25px;
+        width: 0%;
+        position: absolute;
+        top: 250px;
+        left: 0px;
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <!-- this div will be displayed only while 'preload' is still processing load requests' -->
+    <div id="p5_loading" class="loadingclass">Preloader Div
+
+      <div id="progress_bar"></div>
+
+    </div>
+  </body>
+</html>
