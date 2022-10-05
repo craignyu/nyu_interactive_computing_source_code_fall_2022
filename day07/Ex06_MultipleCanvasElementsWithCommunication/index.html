@@ -36,10 +36,12 @@
 
     <script>
       // set up some global variables in this document that will be shared between both of the iframes
-      let x = 0;
-      let y = 0;
-      let drawing1 = false;
-      let drawing2 = false;
+      // note: we are scoping these with 'var' so they are accessible via
+      // the 'window' object
+      var x = 0;
+      var y = 0;
+      var drawing1 = false;
+      var drawing2 = false;
 
       // this function is called to clear both canvases
       // it isolates the variable namespace for each iframe
