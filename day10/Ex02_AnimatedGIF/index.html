@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- load in the p5 core library -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
+
+    <!-- note that you can load the p5.js library locally as well -->
+    <!-- <script src="../js/p5.js"></script> -->
+
+    <!-- your custom sketch code -->
+    <script src="sketch.js"></script>
+
+    <!-- custom CSS styles for this page -->
+    <style></style>
+
+  </head>
+  <body>
+    <h1>Animated GIFs</h1>
+    <p>Press 's' to stop, 'p' to play and 'r' to reset</p>
+    <p>Available methods on a 'GIF' object:</p>
+    <ul>
+        <li><code>img.pause();</code> - pauses the animation for all instances of the GIF</li>
+        <li><code>img.play();</code> - plays (re-starts if stopped) the animation for all instances of the GIF</li>
+        <li><code>img.setFrame(n);</code> - jumps to the desired animation frame for all instances of the GIF</li>
+        <li><code>img.getCurrentFrame();</code> - returns the current frame being played (integer)</li>
+        <li><code>img.numFrames();</code> - returns the total number of frames contained within the GIF (integer)</li>
+  </body>
+</html>
