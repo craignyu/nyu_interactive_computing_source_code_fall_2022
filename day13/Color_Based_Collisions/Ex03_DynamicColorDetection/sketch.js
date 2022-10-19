@@ -47,8 +47,14 @@ class FallingObject {
     // what color is on the buffer at our position?
     // (if we are on the screen)
     if (this.y > 0 && this.y < height) {
+      // we only need to extract the redness at this pixel
+      // (our target color is black, so we are looking for
+      // a color of RGBA: 0,0,0,255
       let c = red(buffer.get(this.x, this.y));
+
+      // did we find our black color
       if (c == 0) {
+        // reverse speed
         this.speed *= -1;
 
         // also shrink a bit in case we get "stuck"
@@ -56,6 +62,7 @@ class FallingObject {
 
         // are we super small?  if so, let's reposition ourselves
         if (this.size < 0.2) {
+          this.size = int(random(10,30));
           this.y = random(-1000,-this.size);
           this.x = random(this.size, width-this.size);
           this.speed = random(2,5);
@@ -67,6 +74,7 @@ class FallingObject {
     // OR
     // did we go off the top with a negative speed?
     if ( (this.y > height + this.size) || (this.y < 0 && this.speed < 0) ) {
+      this.size = int(random(10,30));
       this.y = random(-1000,-this.size);
       this.x = random(this.size, width-this.size);
       this.speed = random(2,5);
