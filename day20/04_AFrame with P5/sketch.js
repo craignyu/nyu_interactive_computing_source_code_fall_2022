@@ -1,9 +1,6 @@
 // our VR world object
 let world;
 
-let thing;
-let speed = 0.05;
-
 function setup() {
   // no canvas needed
   noCanvas();
