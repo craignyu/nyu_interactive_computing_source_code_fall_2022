@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en-us">
+
+	<head>
+		<!-- A-Frame core library -->
+		<!-- documentation:  https://aframe.io/ -->
+		<!-- NOTE: this demo breaks under the new version of A-Frame -->
+		<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+
+		<!-- AR.js Library -->
+		<!-- documentation:  https://ar-js-org.github.io/AR.js-Docs/ -->
+		<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+
+		<!-- p5.js core library -->
+		<!-- documentation:  https://p5js.org/reference/ -->
+		<script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
+
+		<!-- AFrameP5 AR library -->
+		<!-- documentation:  https://cs.nyu.edu/~kapp/aframep5-ar -->
+		<script src="https://craignyu.github.io/aframep5-ar/libraries/aframep5_ar-v0.4.js"></script>
+
+		<!-- Your custom p5.js sketch -->
+		<script src="sketch.js"></script>
+
+		<!-- Custom Styles -->
+		<style type="text/css">
+
+			.content {
+				background-color: white;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				z-index: 1000;
+				display: none;
+				padding: 25px;
+				font-family: sans-serif;
+				line-height: 150%;
+			}
+
+		</style>
+
+
+	</head>
+
+	<body style="margin : 0px; overflow: hidden;">
+
+		<!-- A-Frame Scene -->
+		<a-scene id="ARScene" embedded arjs>
+
+			<!-- markers that we are tracking with a link to the pattern file the AR.js library should be looking for -->
+			<a-marker id="hiro" type="pattern" url="../markers/patt.hiro"></a-marker>
+			<a-marker id="zb" type="pattern" url="../markers/patt.zb"></a-marker>
+
+			<!-- default camera entity (leave this and don't change it) -->
+			<a-entity camera></a-entity>
+
+		</a-scene>
+
+		<div class="content" id="hiro_content">
+			<h1>Hiro Content</h1>
+			<p>Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah </p>
+			<p>Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah </p>
+			<p>Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah </p>
+			<p>Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah </p>
+			<p>Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah </p>
+			<button class="close_button">Close window</button>
+		</div>
+
+		<div class="content" id="zb_content">
+			<h1>ZB Content</h1>
+			<p>Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah </p>
+			<p>Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah </p>
+			<p>Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah </p>
+			<p>Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah </p>
+			<p>Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah Lorem ipsum blah blah blah </p>
+			<button class="close_button">Close window</button>
+		</div>
+
+		<script type="text/javascript">
+
+			// set up all of the close buttons on the page to close their
+			// current window and restart the p5 AR tracking system
+			var allCloseButtons = document.querySelectorAll('.close_button');
+			for (var i = 0; i < allCloseButtons.length; i++) {
+				allCloseButtons[i].addEventListener('click', function(event) {
+					event.currentTarget.parentElement.style.display = 'none';
+					p5_restartTracking();
+				});
+			}
+
+		</script>
+
+	</body>
+
+</html>

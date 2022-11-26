@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en-us">
+
+	<head>
+		<!-- A-Frame core library -->
+		<!-- documentation:  https://aframe.io/ -->
+		<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+
+		<!-- AR.js Library -->
+		<!-- documentation:  https://ar-js-org.github.io/AR.js-Docs/ -->
+		<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+	</head>
+
+	<!-- to view this demo:
+		   (1) Load this page over an https / localhost connection
+			 (2) Allow access to your webcam
+			 (3) Hold up the 'hiro' marker to the camera (see the files in the
+			     ../markers folder, specifically 'hiro.png')
+			 (4) See a dinosaur appear on top of the marker when detected
+  -->
+	<body style="margin : 0px; overflow: hidden;">
+
+		<!-- A-Frame Scene -->
+		<a-scene id="ARScene" embedded arjs>
+
+			<!-- marker that we are tracking with a link to the pattern file the AR.js library should be looking for -->
+			<a-marker id="hiro" type="pattern" url="../markers/patt.hiro">
+
+				<!-- entities that should be positioned on top of the marker -->
+				<a-entity position="0 1 0" scale="1 1 1" gltf-model="../_assets/shiba/scene.gltf"></a-entity>
+
+			</a-marker>
+
+			<!-- default camera entity (leave this and don't change it) -->
+			<a-entity camera></a-entity>
+
+		</a-scene>
+
+	</body>
+
+</html>
