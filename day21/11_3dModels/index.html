@@ -31,7 +31,7 @@
 	    	<!--
 		       The 'a-assets' container is used to load in any external artwork you may want to use as "textures" for your objects. Ensure that this element has an ID of 'VRAssets'
 
-		       Textures can be loaded by creating a new 'a-asset' tag inside of the 'a-assets' container.
+		       Textures can be loaded by creating a new 'a-asset-item' tag inside of the 'a-assets' container.
 		       When doing this you will need to make sure to give your textures a unique ID -
 		       this will be used by p5 to create new objects.
 
@@ -47,12 +47,12 @@
 					<!-- in A-Frame we can support two different types of 3D models - OBJ and GLTF -->
 
 					<!-- these two files point to an OBJ model -->
-					<a-asset id="robot_obj" src="images/robot/model.obj"></a-asset>
-					<a-asset id="robot_mtl" src="images/robot/materials.mtl"></a-asset>
+					<a-asset-item id="robot_obj" src="images/robot/model.obj"></a-asset-item>
+					<a-asset-item id="robot_mtl" src="images/robot/materials.mtl"></a-asset-item>
 
 					<!-- this single file points to a GLTF model -->
 					<!-- "Shiba" (https://skfb.ly/6WxVW) by zixisun02 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/). -->
-					<a-asset id="dog" src="images/shiba/scene.gltf"></a-asset>
+					<a-asset-item id="dog" src="images/shiba/scene.gltf"></a-asset-item>
 
 				</a-assets>
 
